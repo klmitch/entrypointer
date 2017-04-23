@@ -2,6 +2,9 @@
 Object-like Entrypoint Access
 =============================
 
+.. image:: https://travis-ci.org/klmitch/entrypointer.svg?branch=master
+    :target: https://travis-ci.org/klmitch/entrypointer
+
 The ``setuptools`` package provides a handy feature known as
 "entrypoints".  An entrypoint is a named reference to a Python object,
 such as a function, class, or value, which other packages can
