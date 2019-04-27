@@ -357,6 +357,7 @@ class TestEntrypointDict(object):
             'ep2': ['obj1'],
             'ep3': ['obj2', 'obj3'],
             'ep4': [],
+            'ep5': [],
         }
 
         result = len(obj)
@@ -372,6 +373,7 @@ class TestEntrypointDict(object):
             ('ep2', ['obj1']),
             ('ep3', ['obj2', 'obj3']),
             ('ep4', []),
+            ('ep5', []),
         ])
 
         result = list(iter(obj))

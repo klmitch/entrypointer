@@ -394,7 +394,10 @@ class EntrypointDict(AttrGroup, abc.Mapping):
         self._find()
 
         # Subtract out the empty entries
-        return len(self._entries) - sum(1 for v in self._entries.values() if v)
+        return (
+            len(self._entries) -
+            sum(1 for v in self._entries.values() if not v)
+        )
 
     def __iter__(self):
         """
