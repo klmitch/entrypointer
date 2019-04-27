@@ -48,15 +48,12 @@ def readreq(filename):
 # Invoke setup
 setuptools.setup(
     name='entrypointer',
-    version='1.0.1',
+    version='1.0.2',
     author='Kevin L. Mitchell',
     author_email='klmitch@mit.edu',
     url='https://github.com/klmitch/entrypointer',
     description='Object-like Entrypoint Access',
     long_description=readfile('README.rst'),
-    py_modules=['entrypointer'],
-    install_requires=readreq('requirements.txt'),
-    tests_require=readreq('test-requirements.txt'),
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Plugins',
@@ -64,9 +61,12 @@ setuptools.setup(
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Software Development :: User Interfaces',
     ],
+    py_modules=['entrypointer'],
+    install_requires=readreq('requirements.txt'),
+    tests_require=readreq('test-requirements.txt'),
 )

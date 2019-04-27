@@ -1,4 +1,4 @@
-# Copyright (C) 2017 by Kevin L. Mitchell <klmitch@mit.edu>
+# Copyright (C) 2017, 2019 by Kevin L. Mitchell <klmitch@mit.edu>
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you
 # may not use this file except in compliance with the License. You may
@@ -53,10 +53,15 @@ fully answer the question.  Keep this in mind while using this module.
 It is safe to use this module with ``import *``.
 """
 
-import collections
-
 import pkg_resources
 import six
+
+# Use collections on py2, collections.abc on py3
+if six.PY2:
+    import collections as abc
+else:
+    from collections import abc
+
 
 __all__ = ['EntrypointList', 'EntrypointDict', 'eps']
 
@@ -120,7 +125,7 @@ class AttrGroup(object):
 
 
 @six.python_2_unicode_compatible
-class EntrypointList(collections.Sequence):
+class EntrypointList(abc.Sequence):
     """
     A lazy list of entrypoints.  This ``list`` class is designed to
     only query as many entrypoints as are necessary to accomplish the
@@ -295,7 +300,7 @@ class EntrypointList(collections.Sequence):
 
 
 @six.python_2_unicode_compatible
-class EntrypointDict(AttrGroup, collections.Mapping):
+class EntrypointDict(AttrGroup, abc.Mapping):
     """
     A lazy dictionary of entrypoints.  This ``dict`` class is designed
     to only query as many entrypoints as are necessary to accomplish
