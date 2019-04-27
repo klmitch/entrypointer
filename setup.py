@@ -48,7 +48,7 @@ def readreq(filename):
 # Invoke setup
 setuptools.setup(
     name='entrypointer',
-    version='1.0.2',
+    version='1.0.3',
     author='Kevin L. Mitchell',
     author_email='klmitch@mit.edu',
     url='https://github.com/klmitch/entrypointer',
